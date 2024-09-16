@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 
 // inizio esercizio nuovo
-Route::get('/comics', [ComicController::class, 'index'])->name('comic');
+Route::resource('comics', ComicController::class);
 
 
