@@ -8,7 +8,7 @@
      @foreach ($data as $hero)
      {{-- @dd($hero->thumb) --}}
      <div class="card" style="width: 18rem;">
-         <img src="{{ $hero->thumb }}" class="card-img-top" alt="{{$hero->title}}">
+         <img style="height: 20rem;" src="{{ $hero->thumb }}" class="imgHero" alt="{{$hero->title}}">
 
          <div class="card-body">
            <h5 class="card-title">{{$hero->title}}</h5>
