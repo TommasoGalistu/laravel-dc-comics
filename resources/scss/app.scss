@@ -1,0 +1,14 @@
+// Importare le variabili e i mixin prima
+@import "./partial/_variable.scss";
+@import "./partial/_mixin.scss";
+
+// Poi importare gli altri file di stile
+@import "./partial/_general.scss";
+@import "./partial/_header.scss";
+@import "./partial/_footer.scss";
+@import "./partial/_content.scss";
+
+.card {
+    height: 20rem;
+    overflow-y: auto;
+}

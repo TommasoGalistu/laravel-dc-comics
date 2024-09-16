@@ -1,0 +1,58 @@
+.containerAll.content {
+    background-color: black;
+    color: white;
+
+    .contImg {
+        .immagineJumbo {
+            height: 20rem;
+            width: 100%;
+            background-image: url("/resources/img/jumbotron.jpg");
+            // background-image: url("../img/jumbotron.jpg");
+            background-size: cover;
+        }
+    }
+    .mainContainer {
+        position: relative;
+        .button {
+            position: absolute;
+            top: -10px;
+        }
+        .containerCard {
+            width: 100%;
+            padding: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+        .viewContinue {
+            text-align: center;
+            padding-bottom: 2rem;
+        }
+    }
+    .bottone {
+        padding: 1rem;
+        background-color: #0282f9;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #67b3fa;
+        }
+    }
+}
+.card {
+    width: 8rem;
+    height: 12rem;
+    margin-bottom: 1rem;
+    img {
+        width: 100%;
+        height: 80%;
+        display: block;
+    }
+
+    span {
+        display: block;
+        font-size: 0.8rem;
+        padding: 0.8rem 0;
+    }
+}

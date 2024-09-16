@@ -1,0 +1,16 @@
+@mixin flexa($flexa: "center-center") {
+    display: flex;
+
+    @if ($flexa == "center-center") {
+        justify-content: center;
+        align-items: center;
+    } @else if($flexa == "center") {
+        justify-content: center;
+    } @else if($flexa == "low-center") {
+        align-items: center;
+    } @else if($flexa == "spaceBetween") {
+        justify-content: space-between;
+    } @else if($flexa == "spaceAround") {
+        justify-content: space-around;
+    }
+}

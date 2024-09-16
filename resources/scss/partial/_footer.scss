@@ -1,0 +1,100 @@
+// parte alta
+.containerAll.up {
+    background-color: #0f82f7;
+    padding: 3rem 0;
+
+    .mainContainer {
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .contImgText {
+            display: flex;
+            align-items: center;
+            width: auto;
+
+            .contImg {
+                height: 3rem;
+                width: 2.5rem;
+                margin-right: 0.5rem;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            span {
+                font-size: 0.7rem;
+                color: white;
+            }
+        }
+    }
+}
+
+//   policy part
+.containerAll.middle {
+    background-image: url("/resources/img/policy/dc-logo-bg.png"),
+        url("/resources/img/policy/footer-bg.jpg");
+    //   background-size: 30% cover;
+    background-position-x: 70%;
+    background-position-y: center;
+    background-repeat: no-repeat, repeat;
+    filter: saturate(50%);
+    //   background-color: $sfondoFooter;
+
+    .mainContainer {
+        padding: 1.5rem 0;
+        .contListe {
+            display: flex;
+            * {
+                margin-right: 0.5rem;
+            }
+            h3 {
+                color: white;
+            }
+            h3,
+            ul {
+                margin-bottom: 0.5rem;
+
+                li {
+                    color: gray;
+                }
+            }
+        }
+        .contImg {
+            width: 40%;
+        }
+    }
+}
+
+//   parte finale
+.containerAll.down {
+    background-color: $sfondoFooter;
+    .mainContainer {
+        @include flexa("spaceBetween");
+        padding: 2rem 0;
+
+        button {
+            background-color: $sfondoFooter;
+            color: white;
+            border: 2px solid blue;
+            padding: 0.5rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(39, 42, 146);
+            }
+        }
+        .contLink {
+            @include flexa("low-center");
+            span {
+                color: blue;
+            }
+            * {
+                padding: 0 0.5rem;
+            }
+        }
+    }
+}

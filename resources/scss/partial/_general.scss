@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// #app {
+//     height: 100%;
+//     width: 100%;
+// }
+.containerAll {
+    width: 100%;
+}
+
+.mainContainer {
+    width: 70%;
+    margin: auto;
+}
+
+.contImg img {
+    height: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+// classe provvisoria che do agli h2 per far vedere meglio la pagina
+.page {
+    border: 1px solid black;
+    padding: 2rem;
+}
