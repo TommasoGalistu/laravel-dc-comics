@@ -41,7 +41,7 @@ class ComicController extends Controller
         //  dump($new_hero);
          $new_hero->save();
 
-         return redirect()->route('comics.index', $new_hero->id);
+         return redirect()->route('comics.show', $new_hero->id);
 
     }
 
@@ -81,7 +81,7 @@ class ComicController extends Controller
 
         $comic->update($data);
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.show', compact('comic'));
 
     }
 
@@ -92,6 +92,6 @@ class ComicController extends Controller
     {
         $comic->delete();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.show', compact('comic'));
     }
 }

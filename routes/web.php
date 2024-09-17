@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\WhineController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComicController;
+use App\Http\Controllers\WineController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,5 +24,6 @@ Route::get('/', function () {
 
 // inizio esercizio nuovo
 Route::resource('comics', ComicController::class);
+Route::resource('wines', WineController::class);
 
 
