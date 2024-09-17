@@ -18,7 +18,7 @@
            <p class="card-text">Tipo: {{$hero->type}}</p>
            <p class="card-text">Giorno di vendita: {{ $hero->sale_date }}</p>
 
-           <a href="{{route('comics.show', $hero)}}" class="btn btn-primary">Go somewhere</a>
+           <a href="{{ route('comics.show', $hero)}}" class="btn btn-primary">Go somewhere</a>
          </div>
        </div>
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Function\Helper;
+
 use Illuminate\Http\Request;
 use App\Models\Comic;
 class ComicController extends Controller
@@ -21,7 +23,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -29,7 +31,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = $request->all();
+         $new_hero = new Comic();
+         $new_hero->title = $data['title'];
+         $new_hero->description = $data['description'];
+         $new_hero->thumb = $data['thumb'];
+         $new_hero->price = $data['price'];
+        //  dump($new_hero);
+         $new_hero->save();
+
+         return redirect()->route('comics.index', $new_hero->id);
+
     }
 
     /**
@@ -37,15 +50,19 @@ class ComicController extends Controller
      */
     public function show(string $id)
     {
-        return view('description');
+        $data = Comic::find($id);
+
+
+        return view('comics.description', compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comic $comic)
     {
-        //
+
+        return route('comics.edit', $comic);
     }
 
     /**
@@ -53,7 +70,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd($request, $id);
     }
 
     /**
