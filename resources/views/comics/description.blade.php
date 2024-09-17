@@ -7,7 +7,7 @@
     <h1 class="d-inline">{{$data->title}} </h1>
     <div class="contModify d-inline">
         <a class="btn btn-warning" href="{{route('comics.edit', $data)}}"><i class="fa-solid fa-pencil"></i></a>
-        <form class="d-inline" action="{{ route('comics.destroy', $data) }}" method="POST">
+        <form class="d-inline" action="{{ route('comics.destroy', $data->id) }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash "></i></button>

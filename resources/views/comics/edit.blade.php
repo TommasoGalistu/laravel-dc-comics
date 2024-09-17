@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
 
-        <form action="{{ route('comics.update', $comic) }}" method="POST">
+        <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @csrf
             @method('PUT')
             <label for="title">Title</label><br>

@@ -73,6 +73,7 @@ class ComicController extends Controller
         $data = $request->all();
         $comic = Comic::find($id);
 
+
         if($data['title'] === $comic->title){
             $data['slug'] = $comic->slug;
         }else{
@@ -88,10 +89,13 @@ class ComicController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comic $comic)
+    public function destroy(string $id)
     {
-        $comic->delete();
+        $data = Comic::find($id);
+        $data->delete();
 
-        return redirect()->route('comics.show', compact('comic'));
+
+
+        return redirect()->route('comics.index');
     }
 }
