@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
 
-        <form action="{{ route('comics.update') }}" method="POST">
+        <form action="{{ route('comics.update', $comic) }}" method="POST">
             @csrf
             @method('PUT')
             <label for="title">Title</label><br>
@@ -16,7 +16,7 @@
             <input type="text" id="thumb" name="thumb" value="{{$comic->thumb}}" placeholder="url di riferimento"><br>
             <label for="price">Prezzo</label><br>
             <input type="text" id="price" name="price" value="{{$comic->price}}" placeholder="prezzo"><br>
-            <button type="submit">Aggiungi card</button><br>
+            <button type="submit">Modifica card</button><br>
         </form>
     </div>
 </div>
