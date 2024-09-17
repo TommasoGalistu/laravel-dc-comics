@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Wine;
 use Illuminate\Http\Request;
-
+use App\Function\Helper;
 class WineController extends Controller
 {
     /**
@@ -11,7 +11,8 @@ class WineController extends Controller
      */
     public function index()
     {
-        //
+        $wines = Wine::all();
+       return view('wines.index', compact('wines'));
     }
 
     /**
@@ -33,32 +34,50 @@ class WineController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Wine $wine)
     {
-        //
+        return view('wines.description', compact('wine'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Wine $wine)
     {
-        //
+        return view('wines.edit', compact('wine'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Wine $wine)
     {
-        //
+        $data = $request->all();
+
+
+        if($data['wine'] === $wine->wine){
+            $data['slug'] = $wine->slug;
+        }else{
+            $data['slug'] = Helper::generateSlug($data['wine'], Wine::class);
+        }
+
+        $wine->update($data);
+
+
+        return redirect()->route('wines.show', compact('wine'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Wine $wine)
     {
-        //
+
+        $wine->delete();
+
+
+        return redirect()->route('wines.index');
+
+
     }
 }

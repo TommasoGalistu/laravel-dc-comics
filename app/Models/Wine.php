@@ -9,13 +9,11 @@ class Wine extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'title',
-        'description',
-        'thumb',
-        'price',
-        'series',
         'slug',
-        'sale_date',
-        'type'
+        'winery',
+        'wine',
+        'average_rating',
+        'num_reviews',
+        'url'
     ];
 }

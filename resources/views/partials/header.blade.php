@@ -17,6 +17,9 @@
             <li><a href="{{ route('comics.index') }}">Comic</a></li>
             <li><a href="{{ route('comics.create') }}">Create card</a></li>
 
+
+            <li><a href="{{ route('wines.index') }}">Wine</a></li>
+
       </ul>
     </div>
   </div>
