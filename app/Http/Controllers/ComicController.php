@@ -34,6 +34,24 @@ class ComicController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'title' => 'required|min:3|max:100',
+            'description' => 'required|min:3',
+            'thumb' => 'required|min:3|max:500',
+            'price' => 'required|min:1|',
+
+        ],[
+            'title.required' => 'Il titolo è un valore obbligatorio',
+            'title.min' => 'Il titolo deve essere di almeno :min caratteri',
+            'title.max' => 'Il titolo deve essere di massimo :max caratteri',
+            'description.required' => 'La descrizione è un valore obbligatorio',
+            'description.min' => 'La descrizione deve essere di almeno :min caratteri',
+            'thumb.required' => "L'url è un valore obbligatorio",
+            'thumb.min' => "L'url deve essere di almeno :min caratteri",
+            'thumb.max' => "L'url deve essere massimo di :max caratteri",
+            'price.required' => "Il prezzo è un valore obbligatorio",
+            'price.min' => "Manca il prezzo o la valuta",
+        ]);
         $data = $request->all();
          $new_hero = new Comic();
          $new_hero->slug = Helper::generateSlug($data['title'], Comic::class);
@@ -41,7 +59,7 @@ class ComicController extends Controller
         //  dump($new_hero);
          $new_hero->save();
 
-         return redirect()->route('comics.show', $new_hero->id);
+         return redirect()->route('comics.show', $new_hero->id)->with('validated');
 
     }
 
@@ -53,7 +71,7 @@ class ComicController extends Controller
         $data = Comic::find($id);
 
 
-        return view('comics.description', compact('data'));
+        return view('comics.show', compact('data'));
     }
 
     /**

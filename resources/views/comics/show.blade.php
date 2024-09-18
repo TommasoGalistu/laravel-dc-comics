@@ -4,6 +4,11 @@
 @section('content')
 {{-- @dd($data[0]->description) --}}
 <div class="container">
+    @if (session('validated'))
+    <div class="alert alert-success">
+        <p class="">Il nuovo elemento è stato creato con successo!!!</p>
+    </div>
+    @endif
     <h1 class="d-inline">{{$data->title}} </h1>
     <div class="contModify d-inline">
         <a class="btn btn-warning" href="{{route('comics.edit', $data)}}"><i class="fa-solid fa-pencil"></i></a>
