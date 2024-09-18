@@ -4,6 +4,11 @@
 @section('content')
 {{-- @dd($data[0]->description) --}}
 <div class="container">
+    @if (session('delete'))
+    <div class="alert alert-success">
+        <p class="">L'elemento è stato eliminato con successo!!!</p>
+    </div>
+    @endif
  <div class="row gap-3">
      @foreach ($data as $hero)
      {{-- @dd($hero->thumb) --}}

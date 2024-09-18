@@ -9,6 +9,11 @@
         <p class="">Il nuovo elemento è stato creato con successo!!!</p>
     </div>
     @endif
+    @if (session('is_edited'))
+    <div class="alert alert-success">
+        <p class="">L'elemento è stato modificato con successo!!!</p>
+    </div>
+    @endif
     <h1 class="d-inline">{{$data->title}} </h1>
     <div class="contModify d-inline">
         <a class="btn btn-warning" href="{{route('comics.edit', $data)}}"><i class="fa-solid fa-pencil"></i></a>
